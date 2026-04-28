@@ -1,0 +1,10 @@
+# Crie um arquivo chamado render.yaml na raiz do projeto
+services:
+  - type: web
+    name: api-localidades
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
